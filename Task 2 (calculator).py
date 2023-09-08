@@ -46,13 +46,19 @@ def factorial():
 root = tk.Tk()
 root.title("Calculator")
 
+# Set the background color to black
+root.configure(bg="black")
+
+# Set the initial size of the calculator window
+root.geometry("400x500")  # You can adjust the width and height as needed
+
 # Create a variable to hold the display text
 display_var = tk.StringVar()
 display_var.set("")
 
-# Create the display widget
-display = tk.Entry(root, textvariable=display_var, font=('Arial', 20), justify='right')
-display.grid(row=0, column=0, columnspan=5)
+# Create the display widget with a white background and set it to span all columns
+display = tk.Entry(root, textvariable=display_var, font=('Arial', 20), justify='right', bg='white')
+display.grid(row=0, column=0, columnspan=5, sticky="nsew", padx=20, pady=20)  # Add padx and pady for margin
 
 # Define the buttons
 buttons = [
